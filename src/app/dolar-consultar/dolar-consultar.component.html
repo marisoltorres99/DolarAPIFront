@@ -1,1 +1,8 @@
-<p>dolar-consultar works!</p>
+<input id="tipo" [(ngModel)]="tipoDolar" placeholder="Ej: blue, oficial" />
+<button (click)="consultar()">Consultar</button>
+
+<div *ngIf="errorMsg" style="color:red">{{ errorMsg }}</div>
+
+<div *ngIf="precio !== null">
+  <p>Precio del dólar {{ tipoDolar }}: {{ precio }}</p>
+</div>

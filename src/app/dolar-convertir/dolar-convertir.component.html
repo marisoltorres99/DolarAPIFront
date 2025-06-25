@@ -1,1 +1,15 @@
-<p>dolar-convertir works!</p>
+<div>
+  <h2>Convertir Dólares a Pesos</h2>
+
+  <label for="tipo">Tipo de Dólar:</label>
+  <input id="tipo" [(ngModel)]="tipoDolar" placeholder="Ej: blue, oficial..." />
+
+  <label for="cantidad">Cantidad de Dólares:</label>
+  <input id="cantidad" type="number" [(ngModel)]="cantidad" />
+
+  <button (click)="convertir()">Convertir</button>
+
+  <div *ngIf="resultado !== null">
+    <p>Equivalente en pesos: {{ resultado | currency:'ARS':'symbol':'1.2-2' }}</p>
+  </div>
+</div>
